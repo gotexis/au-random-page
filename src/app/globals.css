@@ -1,11 +1,10 @@
 @import "tailwindcss";
 @plugin "daisyui" {
-  themes: all;
+  themes: night, emerald;
 }
 
-/* STYLEGUIDE: Replace theme colors based on your STYLEGUIDE.md */
 @theme {
-  --color-primary: #2563eb;
-  --color-secondary: #7c3aed;
+  --color-primary: #6366f1;
+  --color-secondary: #a855f7;
   --color-accent: #f59e0b;
 }
