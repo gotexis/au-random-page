@@ -7,3 +7,4 @@ next-env.d.ts
 # Generated data files (run scripts/scrape.py to regenerate)
 src/data/passages.json
 
+.vercel
