@@ -4,7 +4,7 @@ out/
 .env*.local
 *.tsbuildinfo
 next-env.d.ts
-# Generated data files (run scripts/scrape.py to regenerate)
-src/data/passages.json
+# Generated data files can be regenerated via scripts/scrape.py
+# but must be committed for static export builds
 
 .vercel
