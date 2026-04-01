@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import BottomNav from "@/components/BottomNav";
 
 export const metadata: Metadata = {
   title: {
@@ -41,34 +42,10 @@ export default function RootLayout({
             <a className="text-xl font-bold" href="/">
               📖 RandomPage
             </a>
-            <nav className="flex gap-4">
-              <a href="/" className="hover:underline">
-                Home
-              </a>
-              <a href="/books" className="hover:underline">
-                Browse Books
-              </a>
-              <a href="/about" className="hover:underline">
-                About
-              </a>
-            </nav>
           </div>
         </header>
-        <main className="container mx-auto px-4 py-8 flex-1">{children}</main>
-        <footer className="footer footer-center p-6 bg-base-200 text-base-content">
-          <p>
-            © {new Date().getFullYear()} RandomPage. Passages from{" "}
-            <a
-              href="https://www.gutenberg.org"
-              className="link"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Project Gutenberg
-            </a>
-            . All texts are in the public domain.
-          </p>
-        </footer>
+        <main className="container mx-auto px-4 py-8 flex-1 pb-24">{children}</main>
+        <BottomNav />
       </body>
     </html>
   );
