@@ -28,7 +28,7 @@ export default function Home() {
       addToHistory(next);
       setIsAnimating(false);
     }, 300);
-  }, []);
+  }, [addToHistory]);
 
   return (
     <div className="max-w-3xl mx-auto">
