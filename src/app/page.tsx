@@ -1,8 +1,9 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import type { Passage } from "@/types";
 import passages from "@/data/passages.json";
+import { useHistory } from "@/hooks/useHistory";
 
 function getRandomPassage(): Passage {
   return passages[Math.floor(Math.random() * passages.length)] as Passage;
@@ -11,11 +12,20 @@ function getRandomPassage(): Passage {
 export default function Home() {
   const [passage, setPassage] = useState<Passage>(() => getRandomPassage());
   const [isAnimating, setIsAnimating] = useState(false);
+  const { addToHistory } = useHistory();
+
+  // Record the initial passage
+  useEffect(() => {
+    addToHistory(passage);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const handleNewPassage = useCallback(() => {
     setIsAnimating(true);
     setTimeout(() => {
-      setPassage(getRandomPassage());
+      const next = getRandomPassage();
+      setPassage(next);
+      addToHistory(next);
       setIsAnimating(false);
     }, 300);
   }, []);
