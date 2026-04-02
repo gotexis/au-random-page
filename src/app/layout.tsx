@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import BottomNav from "@/components/BottomNav";
+import ServiceWorkerRegistrar from "@/components/ServiceWorkerRegistrar";
 
 export const metadata: Metadata = {
   title: {
@@ -37,6 +38,7 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme="night">
       <body className="min-h-screen bg-base-100 flex flex-col">
+        <ServiceWorkerRegistrar />
         <header className="navbar bg-primary text-primary-content shadow-lg">
           <div className="container mx-auto px-4 flex justify-between items-center">
             <a className="text-xl font-bold" href="/">
