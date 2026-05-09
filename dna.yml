@@ -1,0 +1,8 @@
+id: dna://site/au-random-page
+type: site
+title: "au-random-page"
+url: https://au-random-page.starmap.quest
+repo: exisz/au-random-page
+managed_by: dna://agent/starmap
+deployed_by: dna://agent/starmap
+status: deployed
